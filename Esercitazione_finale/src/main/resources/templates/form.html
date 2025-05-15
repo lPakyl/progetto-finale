@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body align="center">
+	<form action="#" th:action="@{/giocatore}" th:object="${giocatore}" method="post">
+		<table>
+			<tr>
+				<td>Nome giocatore:</td>
+				<td><input type="text" th:field="*{nome}" /></td>
+				<td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}">Nome errato</td>
+			</tr>
+			<tr>
+				<td>Cognome giocatore:</td>
+				<td><input type="text" th:field="*{cognome}" /></td>
+				<td th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}">cognome errato</td>
+			</tr>
+			<tr>
+				<td>Anni giocatore:</td>
+				<td><input type="text" th:field="*{anni}" /></td>
+				<td th:if="${#fields.hasErrors('anni')}" th:errors="*{pegi}">Anni Error</td>
+			</tr>
+			<tr>
+				<td>Nazionalità giocatore:</td>
+				<td><input type="text" th:field="*{nazionalita}" /></td>
+				<td th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}">Nazionalita Error</td>
+			</tr>
+			<tr>
+				<td>Ruolo giocatore:</td>
+				<td><input type="text" th:field="*{ruolo}" /></td>
+				<td th:if="${#fields.hasErrors('ruolo')}" th:errors="*{ruolo}">ruolo Error</td>
+			</tr>
+
+
+			<tr>
+				<td><button type="submit">Crea Giocatore</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>
